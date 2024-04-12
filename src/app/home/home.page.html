@@ -1,0 +1,35 @@
+<ion-content [fullscreen]="true">
+  <ion-header>
+    <ion-toolbar color="warning">
+      <ion-title class="ion-text-center">HOME</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="building">
+    <ion-grid>
+      <!-- <ion-row *ngFor="let floor of [0, 1, 2]; let floorIndex = index"> -->
+      <ion-row *ngFor="let floor of getFloors(habitaciones.length / 2); let floorIndex = index">
+        <ion-col size="6" *ngFor="let roomIndex of [0, 1]; let i = index">
+          <div class="window" (click)="cambiarEstadoLuz(habitaciones[floorIndex * 2 + roomIndex].nombre, !habitaciones[floorIndex * 2 + roomIndex].luz)">
+            <div class="room">
+              <h2>{{ habitaciones[floorIndex * 2 + roomIndex].nombre }}</h2>
+              <div [class]="habitaciones[floorIndex * 2 + roomIndex].luz ? 'lamp on' : 'lamp'"></div>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <div class="window1" style="margin-left: 25px;">
+      <div class="pane top-left"></div>
+      <div class="pane top-right"></div>
+      <div class="pane bottom-left"></div>
+      <div class="pane bottom-right"></div>
+    </div>
+    
+    <div class="entrance">
+      <h2>WELCOME</h2>
+    </div>
+  </div>
+</ion-content>
+

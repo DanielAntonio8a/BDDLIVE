@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "bddlive-7e449": {
+      "hosting": {
+        "app": [
+          "bddlive-7e449"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "bddlive-7e449"
+  }
+}
